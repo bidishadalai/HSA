@@ -216,7 +216,7 @@ def load_and_sample_data(data_file, sample_ratio=1.0):
 if __name__ == '__main__':
     # ── CONFIGURE THESE FOR YOUR EXPERIMENT ──────────────────────────────
     task_names = ["sst2sentiment"]
-    model_names = ["Qwen2.5-7B"]
+    model_names = ["Qwen2.5-7B-Instruct"]
     triggers = ["sleeper"]
     # ─────────────────────────────────────────────────────────────────────
 
@@ -241,8 +241,8 @@ if __name__ == '__main__':
                     "task_name": task_name,
                     "model_name": model_name,
                     "trigger": trigger,
-                    "model_path": "Qwen/Qwen2.5-7B",
-                    "tokenizer_path": "Qwen/Qwen2.5-7B",
+                    "model_path": "Qwen/Qwen2.5-7B-Instruct",
+                    "tokenizer_path": "Qwen/Qwen2.5-7B-Instruct",
                     "use_lora": True,
                     "lora_model_path": f"backdoor_weight/{model_name}/{task_name}/{trigger}",
                     "test_trigger_file": f"./data/test_data/poison/{task_name}/{trigger}/backdoor200_{task_name}_{trigger}.json",
